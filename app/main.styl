@@ -1,8 +1,25 @@
-$timerBgColor = hsla(167,100%,46%, 1)
-#main
-  background: $timerBgColor
-  color: hsla(169,100%,20%,1)
-  text-align: center
-  font-family: Helvetica Neue, sans-serif
+$bodyBgColor = hsla(167,100%,46%, 1)
+$mainBgColor = hsla(167,100%,35%, 1)
 
-  
+$quoteBorderColor = hsla(167,100%,30%,1)
+
+#body
+  background-color: $bodyBgColor
+//handheld
+@media only screen and (min-width: 320px)
+  #main
+    background-color: $mainBgColor
+    color: hsla(169,100%,20%,1)
+    text-align: center
+    font-family: Helvetica Neue, sans-serif
+    padding: 30px
+    margin-top: 0
+    border-radius: 3px
+    border: 2px solid $quoteBorderColor
+
+@media only screen and (min-width: 600px)
+  #main
+    margin-top: 10%
+
+  #main
+    margin-top: 30%
