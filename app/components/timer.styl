@@ -1,0 +1,75 @@
+$actionBgColor = hsla(200,75%,50%,1)
+$actionBorderColor = hsla(200,75%,40%,1)
+$actionTextColor = hsla(0,0%,100%,1)
+$timerBgColor = hsla(167,100%,46%, 1)
+$timerTypeBgColor = hsla(167,100%,37%,1)
+$timerNumberBgColor = hsla(169,100%,25%,1)
+
+
+[data-component="timer"]
+  padding: 40px
+
+  label
+    display: block
+    text-align: center
+
+  input
+    width: 70px
+    line-height: 36px
+    font-size: 30px
+    text-align: center
+    border: 1px solid hsla(0,0%,80%, 1)
+
+  #action-group
+    margin: 20px 0
+    display: flex
+    button
+      flex: 1 0 33%
+      height: 44px
+      background-color: $actionBgColor
+      border: 2px solid $actionBorderColor
+      border-radius: 3px
+      color: $actionTextColor
+      font-size: 14px
+      text-transform: uppercase
+      outline: 0
+
+  #categories
+    display: block
+    margin: 0
+    padding: 0
+    list-style: none
+    text-align: center
+
+    li
+      line-height: 30px
+      font-size: 20px
+
+  .is-hidden
+    position: absolute
+    visibility: hidden
+    height: 0
+
+  #clockdiv
+    font-family: sans-serif
+    color: #fff
+    display: block
+    font-weight: 100
+    text-align: center
+    font-size: 30px
+
+    > div
+      padding: 10px
+      border-radius: 3px
+      background: $timerTypeBgColor
+      display: inline-block
+
+      > span
+        padding: 15px
+        border-radius: 3px
+        background: $timerNumberBgColor
+        display: inline-block
+
+    .smalltext
+      padding-top: 5px
+      font-size: 16px
