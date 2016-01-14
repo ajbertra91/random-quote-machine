@@ -14,6 +14,7 @@ module.exports = {
       }
       ,{ test: /\.styl$/, exclude: /node_modules/, loader: "style!css!stylus"}
       ,{ test: /\.png$/, exclude: /node_modules/, loader: "url"}
+      ,{ test: /\.gif$/, exclude: /node_modules/, loader: "url"}
     ]
     ,resolve: {
       extensions: ['.js']
