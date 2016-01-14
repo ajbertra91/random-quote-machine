@@ -25,16 +25,33 @@ $textBgColor = hsla(169,100%,25%,1)
     border-radius: 3px
     color: $actionTextColor
     padding: 10px 20px
+    display: inline-block
+    vertical-align: top
+  #twitter-action
+    background: url('../images/twitter-512.gif') 50% 50% no-repeat, $actionBgColor
+    background-size: 70% auto
+    border: 2px solid $actionBorderColor
+    border-radius: 50%
+    display: inline-block
+    width: 44px
+    height: 44px
+    margin-right: 20px
 //tablet
 @media only screen and (min-width: 600px)
   #current-quote
     min-height: 350px
+  #text
+    font-size: 28px
 
 @media only screen and (min-width: 1250px)
   #current-quote
     min-height: 215px
+    height: auto
 
   #text
     font-size: 32px
+  #twitter-action
+    cursor: pointer
+
 
 

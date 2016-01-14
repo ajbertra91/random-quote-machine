@@ -11,6 +11,7 @@ require('./quotes.styl');
  */
 const $ = jQuery;
 const $actionEl = $('#action');
+const $actionTwitterEl = $('#twitter-action');
 const $currentQuoteEl = $('#current-quote');
 const quotesList = [
   {
@@ -50,13 +51,15 @@ const quotesList = [
   }
 ];
 
+let currentQuote = {};
+
 let getRandomNumber = (min,max) => Math.floor(Math.random() * (max - min + 1)) + min;
 
 let updateQuote = () => {
   let rnd = getRandomNumber(1,7);
   let quote = quotesList.filter((quote) => quote.id === rnd);
   console.debug('quote[0].text: ', quote[0].text);
-
+  currentQuote = quote;
   $currentQuoteEl
     .animate({'opacity': 0}, 300, function() {
       $(this).find('#text').html(quote[0].text);
@@ -64,8 +67,17 @@ let updateQuote = () => {
     }).animate({'opacity':1}, 300);
 }
 
+let socialshare = (e, media) => {
+  e.preventDefault;
+  if (media = 'twitter') {
+    console.log('social media type: ', media);
+    let url = 'https://twitter.com/intent/tweet?text=' + currentQuote[0].text;
+    $actionTwitterEl.attr('href', url);
+  }
+}
+
 updateQuote();
 
- $actionEl.on( 'click', updateQuote );
-// $actionSeasonedEl.on( 'click', ()=> { initializeClock('clockdiv', deadline(30)); } );
+$actionEl.on( 'click', updateQuote );
+$actionTwitterEl.on( 'click', () => { socialshare('tweet') } );
 // $actionWarriorEl.on( 'click', ()=> { initializeClock('clockdiv', deadline(60)); } );
